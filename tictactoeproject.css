@@ -43,3 +43,18 @@ body{
     background-color: lightgray;
     color:red;
   }
+
+  button{
+    background-color: #FFF38C;
+    border: none;
+    border-radius : 0.5rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+
+    padding: 0.7rem 1rem;
+  }
+
+  button:hover{
+    cursor: pointer;
+    background-color: yellowgreen;
+  }
