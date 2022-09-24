@@ -5,6 +5,8 @@ let playerX = "X";
 let currPlayer = playerO;
 let gameOver = false;
 
+
+
 const click = new Audio('sounds_click.wav');
 const gameOverSound = new Audio('sounds_game_over.wav');
 
@@ -14,20 +16,29 @@ window.onload = function () {
 } // This loads the functions after the HTML and CSS have been loaded by the page
 
 function boardGame() {
-    let sub_board = new Array(3)
-      sub_board.fill(' ')
+    // let sub_board = new Array(3)
+    //   sub_board.fill(' ')
       
-    let sub_board1 = new Array(3)
-       sub_board1.fill(' ')
+    // let sub_board1 = new Array(3)
+    //    sub_board1.fill(' ')
 
-    let sub_board2= new Array(3)
-      sub_board2.fill(' ')
+    // let sub_board2= new Array(3)
+    //   sub_board2.fill(' ')
 
-    board =[  
-              sub_board,  
-              sub_board1,
-              sub_board2,
-           ]
+    // board =[  
+    //           sub_board,  
+    //           sub_board1,
+    //           sub_board2,
+    //        ]
+
+
+    const reset = document.getElementById("restart");
+
+    board=[
+           [' ',' ',' '],
+           [' ',' ',' '],
+           [' ',' ',' ']
+          ]
            //This represents the game board in an array form
 
   for (let r = 0; r < 3; r++) {
@@ -44,18 +55,20 @@ function boardGame() {
       }
       tile.addEventListener("click", setTile);
       
-      document.getElementById("table").append(tile); //This inserts the tile div under the board div 
+      document.getElementById("table").append(tile); //This inserts the tile div under the table div 
+      reset.addEventListener("click", reStart);  
     }
   }
+  
 }
 
-function setTile() {
+function setTile() { //This function lets either X and or O be used in the game
     if (gameOver){
         return;
     }
-    let coords = this.id.split("-") //"1-1" ----> ["1","1"] this splits the id from setGame
-    let r = parseInt(coords[0]);
-    let c = parseInt(coords[1]);
+    let cods = this.id.split("-") //"1-1" ----> ["1","1"] this splits the id from setGame
+    let r = parseInt(cods[0]);
+    let c = parseInt(cods[1]);
  
     if (board[r][c] != ' '){
         return;
@@ -136,4 +149,23 @@ function setTile() {
       gameOverSound.play();
       return;
     }
-  }
+  };
+
+ //Think of clearing the array instead.
+
+
+
+function reStart (){
+  //  let secure = document.querySelectorAll("div");
+     
+   
+    document.querySelector("section").textContent = " ";
+  
+  boardGame()
+  setTile()
+  
+}
+
+
+// boardGame()
+// console.log(secure);
