@@ -14,7 +14,6 @@ body{
     width: 450px;
     height: 450px;
   
-    /* background-color: #C3F8FF; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -31,16 +30,16 @@ body{
     align-items: center;
    }
   
-  .horizontal-line {
+  .horizontal {
     border-bottom: 3px solid black;
   } 
   
-  .vertical-line{
+  .vertical{
     border-right: 3px solid black;
   }
   
   .winner {
-    background-color: lightgray;
+    background-color: white;
     color:red;
   }
 
