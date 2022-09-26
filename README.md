@@ -1,10 +1,11 @@
 ## Mod1-TicTacToe
+![This is an image](tictactoe.png)
 # Tic Tac Toe
 ### Tech Stack:
-This tac toe project was:
-HTML 
-CSS 
-Javascript. 
+This tac toe project was created with:
+* HTML 
+* CSS 
+* Javascript. 
 
 ### Basic Information
 This game features two players X and O, striving to win on the same board by getting three patterns of their characters horizontally, vertically, diagonally, and anti-diagonally. 
