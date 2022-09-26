@@ -16,30 +16,26 @@ window.onload = function () {
 } // This loads the functions after the HTML and CSS have been loaded by the page
 
 function boardGame() {
-    // let sub_board = new Array(3)
-    //   sub_board.fill(' ')
+    let sub_board = new Array(3)
+      sub_board.fill(' ')
       
-    // let sub_board1 = new Array(3)
-    //    sub_board1.fill(' ')
+    let sub_board1 = new Array(3)
+       sub_board1.fill(' ')
 
-    // let sub_board2= new Array(3)
-    //   sub_board2.fill(' ')
+    let sub_board2= new Array(3)
+      sub_board2.fill(' ')
 
-    // board =[  
-    //           sub_board,  
-    //           sub_board1,
-    //           sub_board2,
-    //        ]
+    board =[  
+              sub_board,  
+              sub_board1,
+              sub_board2,
+           ]
+//This represents the game board in an array form
 
 
     const reset = document.getElementById("restart");
 
-    board=[
-           [' ',' ',' '],
-           [' ',' ',' '],
-           [' ',' ',' ']
-          ]
-           //This represents the game board in an array form
+   
 
   for (let r = 0; r < 3; r++) {
     for (let c = 0; c < 3; c++) {
@@ -156,16 +152,9 @@ function setTile() { //This function lets either X and or O be used in the game
 
 
 function reStart (){
-  //  let secure = document.querySelectorAll("div");
+
      
-   
-    document.querySelector("section").textContent = " ";
-  
-  boardGame()
-  setTile()
-  
+   window.location.reload(true);
+
+
 }
-
-
-// boardGame()
-// console.log(secure);
