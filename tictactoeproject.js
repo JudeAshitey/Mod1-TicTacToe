@@ -31,23 +31,23 @@ function boardGame() {
               sub_board2,
            ]
 //This represents the game board in an array form
-
+//This also saves the users choices
 
     const reset = document.getElementById("restart");
 
    
 
-  for (let r = 0; r < 3; r++) {
-    for (let c = 0; c < 3; c++) {
+  for (let row = 0; row < 3; row++) {
+    for (let column = 0; column < 3; column++) {
       //<div id="0-0"><div> This function creates a div for every row and column and assigns it an id starting wih [0-0]
       let tile = document.createElement("div");
-      tile.id = r.toString() + "-" + c.toString();
+      tile.id = row.toString() + "-" + column.toString();
       tile.classList.add("tile");
-      if (r == 0 || r == 1) {
-        tile.classList.add("horizontal-line"); //This adds css to the row
+      if (row == 0 || row == 1) {
+        tile.classList.add("horizontal"); //This adds css to the row
       }
-      if (c == 0 || c == 1) {
-        tile.classList.add("vertical-line");//This adds css to the column
+      if (column == 0 || column == 1) {
+        tile.classList.add("vertical");//This adds css to the column
       }
       tile.addEventListener("click", setTile);
       
@@ -63,14 +63,14 @@ function setTile() { //This function lets either X and or O be used in the game
         return;
     }
     let cods = this.id.split("-") //"1-1" ----> ["1","1"] this splits the id from setGame
-    let r = parseInt(cods[0]);
-    let c = parseInt(cods[1]);
+    let row = parseInt(cods[0]);
+    let column = parseInt(cods[1]);
  
-    if (board[r][c] != ' '){
+    if (board[row][column] != ' '){
         return;
     } //Checks to see if the board is empty
  
-    board[r][c] = currPlayer; //This updates the board array
+    board[row][column] = currPlayer; //This updates the board array
     this.innerText = currPlayer;//This updates the HTML
  
  
@@ -88,10 +88,10 @@ function setTile() { //This function lets either X and or O be used in the game
  function checkWinner() {// Checks if there is a winner and assigns a CSS style to indicate so
     //horizontally
 
-    for (let r = 0; r < 3; r++) {
-       if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != ' '){
+    for (let row = 0; row < 3; row++) {
+       if (board[row][0] == board[row][1] && board[row][1] == board[row][2] && board[row][0] != ' '){
           for (let i = 0; i < 3 ; i++){
-            let tile = document.getElementById(r.toString()+ '-' + i.toString());
+            let tile = document.getElementById(row.toString()+ '-' + i.toString());
              tile.classList.add('winner');
           }
           gameOver = true;
@@ -103,10 +103,10 @@ function setTile() { //This function lets either X and or O be used in the game
     } 
 
   //vertically
-  for (let c = 0; c < 3; c++) {
-    if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[0][c] != ' '){
+  for (let column = 0; column < 3; column++) {
+    if (board[0][column] == board[1][column] && board[1][column] == board[2][column] && board[0][column] != ' '){
           for (let i = 0; i < 3; i++) {
-            let tile = document.getElementById(i.toString() + '-' + c.toString());
+            let tile = document.getElementById(i.toString() + '-' + column.toString());
             tile.classList.add('winner');  
           }
           gameOver = true;
@@ -147,7 +147,7 @@ function setTile() { //This function lets either X and or O be used in the game
     }
   };
 
- //Think of clearing the array instead.
+ 
 
 
 
