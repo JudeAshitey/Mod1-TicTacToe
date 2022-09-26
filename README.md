@@ -21,3 +21,13 @@ I would like to add the functionality of any user to play with an AI.
 This I believe would greatly stretch the user and make it a bit more interesting. 
 (If the user can beat AI, they would certainly feel a lot smarter). 
 I would also like to add scores for tracking that way the user can actually know their progress.
+
+
+
+### Sources
+* https://www.youtube.com/watch?v=AzvpHNkjqsg
+* https://www.youtube.com/watch?v=fPew9OI2PnA
+* https://www.youtube.com/watch?v=Zh0pqgfStpE
+* https://www.youtube.com/watch?v=ZMIwggDjCoU
+* https://www.youtube.com/watch?v=COsVwQW01Oo
+* https://www.youtube.com/watch?v=JsErMawwdOw
